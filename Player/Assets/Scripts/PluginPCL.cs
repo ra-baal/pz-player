@@ -9,6 +9,8 @@ using UnityEditor.VersionControl;
 
 public class PluginPCL : MonoBehaviour
 {
+    /// Name of dll to import (cpp plugin pcl).
+    private const string _DLL = "KinectPCLLib";
 
     class Cloud
     {
@@ -38,51 +40,51 @@ public class PluginPCL : MonoBehaviour
         }
     }
 
-    // [DllImport ("cpp_plugin_pcl")]
+    // [DllImport (_DLL)]
     // private static extern void getPointCloud();
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool readPointCloud(ref IntPtr ptrResultVertsX, ref IntPtr ptrResultVertsY, ref IntPtr ptrResultVertsZ,
         ref IntPtr ptrResultColorR, ref IntPtr ptrResultColorG, ref IntPtr ptrResultColorB, ref int resultVertLength);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool extractClusters();
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool readCloud(string filename);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool readKinectCloud();
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool removeBiggestPlane(int maxIterations, double distanceThreshold);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool getClusters(double clusterTolerance, int minClusterSize, int maxClusterSize);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern int getCloudSize();
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern int getClustersCount();
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool getCluster(int clusterIndex, ref IntPtr ptrResultVertsX, ref IntPtr ptrResultVertsY, ref IntPtr ptrResultVertsZ,
         ref IntPtr ptrResultColorR, ref IntPtr ptrResultColorG, ref IntPtr ptrResultColorB, ref int resultVertLength);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool getClusterIndices(int clusterIndex, ref IntPtr indices, ref int indicesLength);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern bool getCloud(ref IntPtr ptrResultVertsX, ref IntPtr ptrResultVertsY, ref IntPtr ptrResultVertsZ,
         ref IntPtr ptrResultColorR, ref IntPtr ptrResultColorG, ref IntPtr ptrResultColorB, ref int resultVertLength);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern void freePointers(IntPtr ptrResultVertsX, IntPtr ptrResultVertsY,
         IntPtr ptrResultVertsZ,
         IntPtr ptrResultColorR, IntPtr ptrResultColorG, IntPtr ptrResultColorB);
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     private static extern void freeClusterIndices(IntPtr ptrIndices);
 
     // Struct test begin
@@ -92,7 +94,7 @@ public class PluginPCL : MonoBehaviour
         public IntPtr pointsX, pointsY, pointsZ;
     }
 
-    [DllImport("cpp_plugin_pcl")]
+    [DllImport(_DLL)]
     public static extern bool structureTest(ref IntPtr myCloudStructure);
 
     public static void CallFunction()
@@ -395,7 +397,7 @@ public class PluginPCL : MonoBehaviour
     {
         if (usePrefabs)
         {
-            Transform t = ((Transform)Instantiate(point, new Vector3(x, y, z), Quaternion.identity));
+            Transform t = ((Transform)Instantiate(point, new Vector3(x, y, z), Quaternion.identity, this.transform));
             t.GetComponent<Renderer>().material.color = color;
             t.name = "point_in_cloud_" + tag;
 
@@ -404,6 +406,7 @@ public class PluginPCL : MonoBehaviour
         {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.position = new Vector3(x, y, z);
+            cube.transform.parent = this.transform;
 
             cube.name = "point_in_cloud_" + tag;
             cube.GetComponent<Renderer>().material.color = color;

@@ -268,15 +268,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
-  usePrefabs: 1
+  usePrefabs: 0
+  pointScale: 0.01
   useKinect: 0
   kinectRealtime: 0
   debug_indices: 0
+  drawSegmentedCloud: 1
   maxIterations: 100
   distanceThreshold: 0.02
   clusterTolerance: 0.02
   minClusterSize: 100
   maxClusterSize: 25000
+  filename: test1.pcd
   layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -306,7 +309,6 @@ GameObject:
   - component: {fileID: 1131792960}
   - component: {fileID: 1131792959}
   - component: {fileID: 1131792958}
-  - component: {fileID: 1131792962}
   m_Layer: 0
   m_Name: TestCube
   m_TagString: Untagged
@@ -390,18 +392,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1131792962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131792957}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f472d371ff8436044b986feea5060c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2059337840
 GameObject:
   m_ObjectHideFlags: 0
