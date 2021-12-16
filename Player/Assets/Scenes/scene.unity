@@ -124,6 +124,433 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3996309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3996310}
+  - component: {fileID: 3996311}
+  m_Layer: 0
+  m_Name: CloudFrame 23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3996310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996309}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3996311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 3996310}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &57331332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57331333}
+  - component: {fileID: 57331334}
+  m_Layer: 0
+  m_Name: CloudFrame 12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &57331333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57331332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57331334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57331332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 57331333}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &67545339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67545340}
+  - component: {fileID: 67545341}
+  m_Layer: 0
+  m_Name: CloudFrame 13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &67545340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67545339}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &67545341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67545339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 67545340}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &77376829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 77376830}
+  - component: {fileID: 77376831}
+  m_Layer: 0
+  m_Name: CloudFrame 22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &77376830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77376829}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &77376831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77376829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 77376830}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &170583919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170583920}
+  - component: {fileID: 170583921}
+  m_Layer: 0
+  m_Name: CloudFrame 11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &170583920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170583919}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &170583921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170583919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 170583920}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &208053690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208053691}
+  - component: {fileID: 208053692}
+  m_Layer: 0
+  m_Name: CloudFrame 27
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &208053691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208053690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &208053692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208053690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 208053691}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &380350899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 380350900}
+  - component: {fileID: 380350901}
+  m_Layer: 0
+  m_Name: CloudFrame 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &380350900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380350899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &380350901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380350899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 380350900}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &426093656
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +597,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_BackGroundColor: {r: 0.18867922, g: 0.1698113, b: 0.1698113, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -238,7 +665,7 @@ MonoBehaviour:
   minimumY: -60
   maximumY: 60
   speed: 5
---- !u!1 &863226097
+--- !u!1 &449005138
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,22 +673,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 863226099}
-  - component: {fileID: 863226098}
+  - component: {fileID: 449005139}
+  - component: {fileID: 449005140}
   m_Layer: 0
-  m_Name: PointCloud
+  m_Name: CloudFrame 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &863226098
+  m_IsActive: 0
+--- !u!4 &449005139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449005138}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &449005140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863226097}
+  m_GameObject: {fileID: 449005138}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
@@ -279,7 +720,597 @@ MonoBehaviour:
   clusterTolerance: 0.02
   minClusterSize: 100
   maxClusterSize: 25000
-  filename: test1.pcd
+  filename: Assets/test4.pcd
+  frame: {fileID: 449005139}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &563617536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563617537}
+  - component: {fileID: 563617538}
+  m_Layer: 0
+  m_Name: CloudFrame 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &563617537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563617536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563617538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563617536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 563617537}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &623937592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623937593}
+  - component: {fileID: 623937594}
+  m_Layer: 0
+  m_Name: CloudFrame 19
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &623937593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623937592}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &623937594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623937592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 623937593}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &649110096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649110097}
+  m_Layer: 0
+  m_Name: Frames
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &649110097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649110096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 821784295}
+  - {fileID: 2043175729}
+  - {fileID: 1697450128}
+  - {fileID: 380350900}
+  - {fileID: 917369463}
+  - {fileID: 563617537}
+  - {fileID: 878590731}
+  - {fileID: 829550198}
+  - {fileID: 1888695395}
+  - {fileID: 1088739348}
+  - {fileID: 170583920}
+  - {fileID: 57331333}
+  - {fileID: 67545340}
+  - {fileID: 867836851}
+  - {fileID: 449005139}
+  - {fileID: 1354478331}
+  - {fileID: 1555839117}
+  - {fileID: 1631409515}
+  - {fileID: 623937593}
+  - {fileID: 1072731412}
+  - {fileID: 1691517309}
+  - {fileID: 77376830}
+  - {fileID: 3996310}
+  - {fileID: 679841105}
+  - {fileID: 742539516}
+  - {fileID: 1606750597}
+  - {fileID: 208053691}
+  - {fileID: 2002768631}
+  - {fileID: 1268241990}
+  - {fileID: 1411210691}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &679841104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 679841105}
+  - component: {fileID: 679841106}
+  m_Layer: 0
+  m_Name: CloudFrame 24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &679841105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679841104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679841106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679841104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test2.pcd
+  frame: {fileID: 679841105}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &742539515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742539516}
+  - component: {fileID: 742539517}
+  m_Layer: 0
+  m_Name: CloudFrame 25
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &742539516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742539515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742539517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742539515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 742539516}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &801708278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 801708279}
+  - component: {fileID: 801708280}
+  m_Layer: 0
+  m_Name: AnimationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &801708279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801708278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &801708280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801708278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff85eb69c588e14f8fa7bad32c0a6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 821784293}
+  - {fileID: 2043175727}
+  - {fileID: 1697450127}
+  - {fileID: 380350899}
+  - {fileID: 917369462}
+  - {fileID: 563617536}
+  - {fileID: 878590730}
+  - {fileID: 829550197}
+  - {fileID: 1888695394}
+  - {fileID: 1088739347}
+  - {fileID: 170583919}
+  - {fileID: 57331332}
+  - {fileID: 67545339}
+  - {fileID: 867836850}
+  - {fileID: 449005138}
+  - {fileID: 1354478330}
+  - {fileID: 1555839116}
+  - {fileID: 1631409514}
+  - {fileID: 623937592}
+  - {fileID: 1072731411}
+  - {fileID: 1691517308}
+  - {fileID: 77376829}
+  - {fileID: 3996309}
+  - {fileID: 679841104}
+  - {fileID: 742539515}
+  - {fileID: 1606750596}
+  - {fileID: 208053690}
+  - {fileID: 2002768630}
+  - {fileID: 1268241989}
+  - {fileID: 1411210690}
+  fileNames:
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+  - Assets/test4.pcd
+--- !u!1 &821784293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821784295}
+  - component: {fileID: 821784294}
+  m_Layer: 0
+  m_Name: CloudFrame 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &821784294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821784293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 821784295}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!4 &821784295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821784293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &829550197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829550198}
+  - component: {fileID: 829550199}
+  m_Layer: 0
+  m_Name: CloudFrame 8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &829550198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829550197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &829550199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829550197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 829550198}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &863226097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 863226099}
+  - component: {fileID: 863226098}
+  m_Layer: 0
+  m_Name: PointCloud
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &863226098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863226097}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 1
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/twarz.pcd
+  frame: {fileID: 863226099}
+  cloudReady: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -297,6 +1328,311 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &867836850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867836851}
+  - component: {fileID: 867836852}
+  m_Layer: 0
+  m_Name: CloudFrame 14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &867836851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867836850}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867836852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867836850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 867836851}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &878590730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878590731}
+  - component: {fileID: 878590732}
+  m_Layer: 0
+  m_Name: CloudFrame 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &878590731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878590730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &878590732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878590730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 878590731}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &917369462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917369463}
+  - component: {fileID: 917369464}
+  m_Layer: 0
+  m_Name: CloudFrame 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &917369463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917369462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917369464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917369462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 917369463}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1072731411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1072731412}
+  - component: {fileID: 1072731413}
+  m_Layer: 0
+  m_Name: CloudFrame 20
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1072731412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072731411}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1072731413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072731411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 1072731412}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1088739347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088739348}
+  - component: {fileID: 1088739349}
+  m_Layer: 0
+  m_Name: CloudFrame 10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1088739348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088739347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088739349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088739347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test2.pcd
+  frame: {fileID: 1088739348}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1131792957
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +1663,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
@@ -391,6 +1728,677 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1268241989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268241990}
+  - component: {fileID: 1268241991}
+  m_Layer: 0
+  m_Name: CloudFrame 29
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1268241990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268241989}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1268241991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268241989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 1268241990}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1354478330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1354478331}
+  - component: {fileID: 1354478332}
+  m_Layer: 0
+  m_Name: CloudFrame 16
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1354478331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354478330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354478332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354478330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 1354478331}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1411210690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411210691}
+  - component: {fileID: 1411210692}
+  m_Layer: 0
+  m_Name: CloudFrame 30
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1411210691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411210690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1411210692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411210690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 1411210691}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1555839116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555839117}
+  - component: {fileID: 1555839118}
+  m_Layer: 0
+  m_Name: CloudFrame 17
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1555839117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555839116}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555839118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555839116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 1555839117}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1606750596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606750597}
+  - component: {fileID: 1606750598}
+  m_Layer: 0
+  m_Name: CloudFrame 26
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1606750597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606750596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606750598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606750596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 1606750597}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1631409514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631409515}
+  - component: {fileID: 1631409516}
+  m_Layer: 0
+  m_Name: CloudFrame 18
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1631409515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631409514}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631409516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631409514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 1631409515}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1691517308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691517309}
+  - component: {fileID: 1691517310}
+  m_Layer: 0
+  m_Name: CloudFrame 21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1691517309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691517308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691517310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691517308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test4.pcd
+  frame: {fileID: 1691517309}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1697450127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697450128}
+  - component: {fileID: 1697450129}
+  m_Layer: 0
+  m_Name: CloudFrame 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1697450128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697450127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697450129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697450127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 1697450128}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &1888695394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888695395}
+  - component: {fileID: 1888695396}
+  m_Layer: 0
+  m_Name: CloudFrame 9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1888695395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888695394}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1888695396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888695394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 1888695395}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &2002768630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002768631}
+  - component: {fileID: 2002768632}
+  m_Layer: 0
+  m_Name: CloudFrame 28
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2002768631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002768630}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002768632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002768630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test1.pcd
+  frame: {fileID: 2002768631}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &2043175727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043175729}
+  - component: {fileID: 2043175728}
+  m_Layer: 0
+  m_Name: CloudFrame 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2043175728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043175727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7606ceb2e651a3f44b05b2724e343caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 400000, guid: 2a27561408a453b43a95f95d51876d30, type: 3}
+  usePrefabs: 0
+  pointScale: 0.01
+  useKinect: 0
+  kinectRealtime: 0
+  debug_indices: 0
+  drawSegmentedCloud: 1
+  maxIterations: 100
+  distanceThreshold: 0.02
+  clusterTolerance: 0.02
+  minClusterSize: 100
+  maxClusterSize: 25000
+  filename: Assets/test2.pcd
+  frame: {fileID: 2043175729}
+  cloudReady: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!4 &2043175729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043175727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649110097}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2059337840
 GameObject:

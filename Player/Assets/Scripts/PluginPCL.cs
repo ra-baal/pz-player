@@ -11,6 +11,7 @@ public class PluginPCL : MonoBehaviour
 {
     /// Name of dll to import (cpp plugin pcl).
     private const string _DLL = "KinectPCLLib";
+    //private const string _DLL = "cpp_plugin_pcl";
 
     class Cloud
     {
@@ -397,16 +398,18 @@ public class PluginPCL : MonoBehaviour
     {
         if (usePrefabs)
         {
-            Transform t = ((Transform)Instantiate(point, new Vector3(x, y, z), Quaternion.identity, this.transform));
+            Transform t = ((Transform)Instantiate(point, new Vector3(x, y, z), Quaternion.identity));
+            //Transform t = ((Transform)Instantiate(point, new Vector3(x, y, z), Quaternion.identity, this.transform));
             t.GetComponent<Renderer>().material.color = color;
             t.name = "point_in_cloud_" + tag;
 
+            t.parent = frame.transform;
         }
         else
         {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.position = new Vector3(x, y, z);
-            cube.transform.parent = this.transform;
+            cube.transform.parent = frame.transform;
 
             cube.name = "point_in_cloud_" + tag;
             cube.GetComponent<Renderer>().material.color = color;
@@ -618,7 +621,11 @@ public class PluginPCL : MonoBehaviour
 
     public string filename;
 
-    void Start()
+    [Header("Parent object")]
+    [SerializeField] private Transform frame;
+    public bool cloudReady = false;
+
+    public void ShowCloud()
     {
         totaltime = Time.realtimeSinceStartup;
 
@@ -648,6 +655,7 @@ public class PluginPCL : MonoBehaviour
                     debugIndices(i);
                 }
             }
+            cloudReady = true;
             Debug.Log("Clusters drawn" + printTimeDelta());
 
         }
@@ -658,6 +666,11 @@ public class PluginPCL : MonoBehaviour
         }
 
         totaltime = Time.realtimeSinceStartup;
+    }
+
+    private void OnDisable()
+    {
+        cloudReady = false;
     }
 
     int selectedTag = -1;
