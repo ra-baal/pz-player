@@ -7,7 +7,7 @@ public class AnimationController : MonoBehaviour
     [Header("Parent objects")]
     [SerializeField] private List<GameObject> frames;
     private GameObject currentFrame;
-    private PluginPCL pluginPCL;
+    private PointCloudMonoBehaviour pluginPCL;
 
     private int frameIterator;
     private int frameCount;
@@ -28,7 +28,7 @@ public class AnimationController : MonoBehaviour
             frameIterator = 0;
 
             currentFrame = frames[0];
-            pluginPCL = frames[0].GetComponent<PluginPCL>();
+            pluginPCL = frames[0].GetComponent<PointCloudMonoBehaviour>();
             pluginPCL.ShowCloud();
             currentFrame.SetActive(true);
 
@@ -37,9 +37,9 @@ public class AnimationController : MonoBehaviour
             //sets the filenames for first (frameCount) frames
             for (int i = 1; i < frameCount; i++)
             {
-                frames[i].GetComponent<PluginPCL>().filename = fileNames[i];
+                frames[i].GetComponent<PointCloudMonoBehaviour>().filename = fileNames[i];
                 //we read the clouds beforehand to allow bigger framerates
-                frames[i].GetComponent<PluginPCL>().ShowCloud();
+                frames[i].GetComponent<PointCloudMonoBehaviour>().ShowCloud();
             }
             fileIterator = frameCount;
 
@@ -80,7 +80,7 @@ public class AnimationController : MonoBehaviour
 
         //setup next frame
         currentFrame = frames[frameIterator];
-        pluginPCL = currentFrame.GetComponent<PluginPCL>();
+        pluginPCL = currentFrame.GetComponent<PointCloudMonoBehaviour>();
         currentFrame.SetActive(true);
     }
 

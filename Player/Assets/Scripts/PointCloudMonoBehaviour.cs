@@ -7,11 +7,8 @@ using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEditor.VersionControl;
 
-public class PluginPCL : MonoBehaviour
+public class PointCloudMonoBehaviour : MonoBehaviour
 {
-    /// Name of dll to import (cpp plugin pcl).
-    private const string _DLL = "KinectPCLLib";
-    //private const string _DLL = "cpp_plugin_pcl";
 
     class Cloud
     {
@@ -41,62 +38,12 @@ public class PluginPCL : MonoBehaviour
         }
     }
 
-    // [DllImport (_DLL)]
-    // private static extern void getPointCloud();
-
-    [DllImport(_DLL)]
-    private static extern bool readPointCloud(ref IntPtr ptrResultVertsX, ref IntPtr ptrResultVertsY, ref IntPtr ptrResultVertsZ,
-        ref IntPtr ptrResultColorR, ref IntPtr ptrResultColorG, ref IntPtr ptrResultColorB, ref int resultVertLength);
-
-    [DllImport(_DLL)]
-    private static extern bool extractClusters();
-
-    [DllImport(_DLL)]
-    private static extern bool readCloud(string filename);
-
-    [DllImport(_DLL)]
-    private static extern bool readKinectCloud();
-
-    [DllImport(_DLL)]
-    private static extern bool removeBiggestPlane(int maxIterations, double distanceThreshold);
-
-    [DllImport(_DLL)]
-    private static extern bool getClusters(double clusterTolerance, int minClusterSize, int maxClusterSize);
-
-    [DllImport(_DLL)]
-    private static extern int getCloudSize();
-
-    [DllImport(_DLL)]
-    private static extern int getClustersCount();
-
-    [DllImport(_DLL)]
-    private static extern bool getCluster(int clusterIndex, ref IntPtr ptrResultVertsX, ref IntPtr ptrResultVertsY, ref IntPtr ptrResultVertsZ,
-        ref IntPtr ptrResultColorR, ref IntPtr ptrResultColorG, ref IntPtr ptrResultColorB, ref int resultVertLength);
-
-    [DllImport(_DLL)]
-    private static extern bool getClusterIndices(int clusterIndex, ref IntPtr indices, ref int indicesLength);
-
-    [DllImport(_DLL)]
-    private static extern bool getCloud(ref IntPtr ptrResultVertsX, ref IntPtr ptrResultVertsY, ref IntPtr ptrResultVertsZ,
-        ref IntPtr ptrResultColorR, ref IntPtr ptrResultColorG, ref IntPtr ptrResultColorB, ref int resultVertLength);
-
-    [DllImport(_DLL)]
-    private static extern void freePointers(IntPtr ptrResultVertsX, IntPtr ptrResultVertsY,
-        IntPtr ptrResultVertsZ,
-        IntPtr ptrResultColorR, IntPtr ptrResultColorG, IntPtr ptrResultColorB);
-
-    [DllImport(_DLL)]
-    private static extern void freeClusterIndices(IntPtr ptrIndices);
-
     // Struct test begin
     public struct MyCloud
     {
         public Int32 Size;
         public IntPtr pointsX, pointsY, pointsZ;
     }
-
-    [DllImport(_DLL)]
-    public static extern bool structureTest(ref IntPtr myCloudStructure);
 
     public static void CallFunction()
     {
@@ -109,7 +56,7 @@ public class PluginPCL : MonoBehaviour
         IntPtr unmanagedAddr = Marshal.AllocHGlobal(Marshal.SizeOf(managedObj));
         Marshal.StructureToPtr(managedObj, unmanagedAddr, true);
 
-        structureTest(ref unmanagedAddr);
+        KinectPclLib.structureTest(ref unmanagedAddr);
 
         Marshal.PtrToStructure(unmanagedAddr, managedObj);
 
@@ -132,7 +79,7 @@ public class PluginPCL : MonoBehaviour
 
         int resultVertLength = 0;
 
-        bool success = getCloud(ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
+        bool success = KinectPclLib.getCloud(ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
             ref ptrResultColorR, ref ptrResultColorG, ref ptrResultColorB, ref resultVertLength);
         if (success)
         {
@@ -192,7 +139,7 @@ public class PluginPCL : MonoBehaviour
                 createCube(resultVerticesX[i], resultVerticesY[i], resultVerticesZ[i], new Color(resultColorsR[i] / 255F, resultColorsG[i] / 255F, resultColorsB[i] / 255F));
             }
 
-            freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
+            KinectPclLib.freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
                 ptrResultColorR, ptrResultColorG, ptrResultColorB);
             Debug.Log("Memory deallocation succesful");
 
@@ -216,7 +163,7 @@ public class PluginPCL : MonoBehaviour
 
         int resultVertLength = 0;
 
-        bool success = readPointCloud(ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
+        bool success = KinectPclLib.readPointCloud(ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
             ref ptrResultColorR, ref ptrResultColorG, ref ptrResultColorB, ref resultVertLength);
         if (success)
         {
@@ -278,7 +225,7 @@ public class PluginPCL : MonoBehaviour
                 result.colors[i] = new Color(resultColorsR[i] / 255F, resultColorsG[i] / 255F, resultColorsB[i] / 255F);
             }
 
-            freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
+            KinectPclLib.freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
                 ptrResultColorR, ptrResultColorG, ptrResultColorB);
             Debug.Log("Memory deallocation succesful");
 
@@ -309,7 +256,7 @@ public class PluginPCL : MonoBehaviour
         int resultVertLength = 0;
 
         // bool success = getPseudoPointCloud (ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ, ref resultVertLength);
-        bool success = readPointCloud(ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
+        bool success = KinectPclLib.readPointCloud(ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
             ref ptrResultColorR, ref ptrResultColorG, ref ptrResultColorB, ref resultVertLength);
 
         if (success)
@@ -372,7 +319,7 @@ public class PluginPCL : MonoBehaviour
                 createCube(resultVerticesX[i], resultVerticesY[i], resultVerticesZ[i], new Color(resultColorsR[i] / 255F, resultColorsG[i] / 255F, resultColorsB[i] / 255F));
             }
 
-            freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
+            KinectPclLib.freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
                 ptrResultColorR, ptrResultColorG, ptrResultColorB);
             Debug.Log("Memory deallocation succesful");
 
@@ -430,7 +377,7 @@ public class PluginPCL : MonoBehaviour
 
         int resultVertLength = 0;
 
-        bool success = getCluster(clusterIndex, ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
+        bool success = KinectPclLib.getCluster(clusterIndex, ref ptrResultVertsX, ref ptrResultVertsY, ref ptrResultVertsZ,
             ref ptrResultColorR, ref ptrResultColorG, ref ptrResultColorB, ref resultVertLength);
         if (success)
         {
@@ -502,7 +449,7 @@ public class PluginPCL : MonoBehaviour
             resultColorsG = null;
             resultColorsB = null;
 
-            freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
+            KinectPclLib.freePointers(ptrResultVertsX, ptrResultVertsY, ptrResultVertsZ,
                 ptrResultColorR, ptrResultColorG, ptrResultColorB);
             Debug.Log("Memory deallocation succesful");
 
@@ -527,7 +474,7 @@ public class PluginPCL : MonoBehaviour
         IntPtr ptrIndices = IntPtr.Zero;
         int resultIndicesLength = 0;
 
-        bool success = getClusterIndices(clusterIndex, ref ptrIndices, ref resultIndicesLength);
+        bool success = KinectPclLib.getClusterIndices(clusterIndex, ref ptrIndices, ref resultIndicesLength);
         if (success)
         {
             // Debug.Log ("ResultVertLenght = " + resultVertLength);
@@ -553,7 +500,7 @@ public class PluginPCL : MonoBehaviour
 
             resultIndices = null;
 
-            freeClusterIndices(ptrIndices);
+            KinectPclLib.freeClusterIndices(ptrIndices);
             Debug.Log("Memory deallocated successfully");
 
         }
@@ -572,7 +519,7 @@ public class PluginPCL : MonoBehaviour
         Debug.Log("Refreshing kinect ..");
 
         // Clean pointcloud
-        readKinectCloud();
+        KinectPclLib.readKinectCloud();
 
         /*
 		// Clean scene (delete old cubes)
@@ -631,22 +578,22 @@ public class PluginPCL : MonoBehaviour
 
         if (useKinect)
         {
-            Debug.Log("readKinectCloud() : " + readKinectCloud() + printTimeDelta());
+            Debug.Log("readKinectCloud() : " + KinectPclLib.readKinectCloud() + printTimeDelta());
         }
         else
         {
-            Debug.Log("readCloud() : " + readCloud(filename) + printTimeDelta());
+            Debug.Log("readCloud() : " + KinectPclLib.readCloud(filename) + printTimeDelta());
         }
 
         if (drawSegmentedCloud)
         {
-            Debug.Log("getCloudSize() : " + getCloudSize() + printTimeDelta());
-            Debug.Log("removeBiggestPlane() : " + removeBiggestPlane(maxIterations, distanceThreshold) + printTimeDelta());
-            Debug.Log("getClusters() : " + getClusters(clusterTolerance, minClusterSize, maxClusterSize) + printTimeDelta());
-            Debug.Log("getClustersCount() : " + getClustersCount() + printTimeDelta());
+            Debug.Log("getCloudSize() : " + KinectPclLib.getCloudSize() + printTimeDelta());
+            Debug.Log("removeBiggestPlane() : " + KinectPclLib.removeBiggestPlane(maxIterations, distanceThreshold) + printTimeDelta());
+            Debug.Log("getClusters() : " + KinectPclLib.getClusters(clusterTolerance, minClusterSize, maxClusterSize) + printTimeDelta());
+            Debug.Log("getClustersCount() : " + KinectPclLib.getClustersCount() + printTimeDelta());
 
 
-            for (int i = 0; i < getClustersCount(); i++)
+            for (int i = 0; i < KinectPclLib.getClustersCount(); i++)
             {
                 drawCluster(i);
 
