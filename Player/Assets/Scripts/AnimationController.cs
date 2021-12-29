@@ -110,8 +110,13 @@ public class AnimationController : MonoBehaviour
         }
     }
 
+    public void CallOutFrameSequenceEnd()
+    {
+        Debug.LogWarning("Animation per second finished");
+    }
+
     //to zostaje na poxniejsze testowanie czy uda nam sie przewijaæ klatkki szybciej
-    IEnumerator FixedFrameUpdate()
+    /*IEnumerator FixedFrameUpdate()
     {
         while (true)
         {
@@ -127,10 +132,10 @@ public class AnimationController : MonoBehaviour
 
     private void Update()
     {
-        /*if(!canAnimate)
+        if(!canAnimate)
         {
             StopCoroutine("FixedFrameUpdate");
-        }*/
+        }
         UpdateFrames();
-    }
+    }*/
 }

@@ -1030,6 +1030,93 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!1001 &776407191
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -364223573239433514, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226210868169737390, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8670151273213183110, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+    - target: {fileID: 8980549144392899874, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_Name
+      value: Bearded guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980549144392899874, guid: d868170c24e3aa64fb4f1548f79406a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: -4216948427090074523, guid: d868170c24e3aa64fb4f1548f79406a6,
+    type: 3}
+--- !u!33 &776407192 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 8226210868169737390, guid: d868170c24e3aa64fb4f1548f79406a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 776407191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801708278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 801708279}
   - component: {fileID: 801708280}
+  - component: {fileID: 801708281}
   m_Layer: 0
   m_Name: AnimationController
   m_TagString: Untagged
@@ -1145,6 +1233,25 @@ MonoBehaviour:
   - Assets/test4.pcd
   - Assets/test4.pcd
   - Assets/test4.pcd
+--- !u!95 &801708281
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801708278}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac159b3fec2e6004bb2b395674a48518, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &821784293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1293,7 @@ MonoBehaviour:
   clusterTolerance: 0.02
   minClusterSize: 100
   maxClusterSize: 25000
-  filename: Assets/test1.pcd
+  filename: Assets/test4.pcd
   frame: {fileID: 821784295}
   cloudReady: 0
   layerMask:
@@ -1663,7 +1770,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
@@ -1912,6 +2018,49 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!1 &1454996786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8980549144392899874, guid: d868170c24e3aa64fb4f1548f79406a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 776407191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1454996787
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454996786}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 672a715ce1082a94e95891e0b5044cd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1454996788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454996786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94941f3ca16fe494a865e7365ad09036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshFilter: {fileID: 776407192}
+  meshes:
+  - {fileID: -8670151273213183110, guid: 8d4227c96369bc94799aea9369dc5f1d, type: 3}
+  - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  frames: []
+  fileNames: []
 --- !u!1 &1555839116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,7 +2360,7 @@ MonoBehaviour:
   clusterTolerance: 0.02
   minClusterSize: 100
   maxClusterSize: 25000
-  filename: Assets/test1.pcd
+  filename: Assets/test4.pcd
   frame: {fileID: 1697450128}
   cloudReady: 0
   layerMask:
@@ -2380,7 +2529,7 @@ MonoBehaviour:
   clusterTolerance: 0.02
   minClusterSize: 100
   maxClusterSize: 25000
-  filename: Assets/test2.pcd
+  filename: Assets/test4.pcd
   frame: {fileID: 2043175729}
   cloudReady: 0
   layerMask:
