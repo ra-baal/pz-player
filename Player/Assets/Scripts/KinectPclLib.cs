@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-/// Imports function from dll.
+/// Imports functions from dll.
 public static class KinectPclLib
 {
     /// Name of dll file to import (cpp plugin pcl).
