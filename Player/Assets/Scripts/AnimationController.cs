@@ -8,21 +8,22 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private List<GameObject> frames;
     private GameObject currentFrame;
     private PointCloudMonoBehaviour pluginPCL;
+    public FileReader fileReader;
 
     private int frameIterator;
     private int frameCount;
 
     private bool canAnimate;
 
-    [SerializeField] private string[] fileNames;
-    private int fileCount;
     private int fileIterator;
+
+    bool isPaused = false;
 
     void Start()
     {
-        //get a list of all the filenames from another file or something c:
+        fileReader = FindObjectOfType<FileReader>();
 
-        if (frames.Count != 0 && fileNames.Length != 0)
+        if (frames.Count != 0 && fileReader.fileCount != 0)
         {
             frameCount = frames.Count;
             frameIterator = 0;
@@ -32,12 +33,10 @@ public class AnimationController : MonoBehaviour
             pluginPCL.ShowCloud();
             currentFrame.SetActive(true);
 
-            fileCount = fileNames.Length;
-
             //sets the filenames for first (frameCount) frames
             for (int i = 1; i < frameCount; i++)
             {
-                frames[i].GetComponent<PointCloudMonoBehaviour>().filename = fileNames[i];
+                frames[i].GetComponent<PointCloudMonoBehaviour>().filename = "Assets/Resources/" + fileReader.fileNames[i];
                 //we read the clouds beforehand to allow bigger framerates
                 frames[i].GetComponent<PointCloudMonoBehaviour>().ShowCloud();
             }
@@ -63,7 +62,7 @@ public class AnimationController : MonoBehaviour
     {
         currentFrame.SetActive(false);
         //frame has to be reseted to 0 rotation (rotation will not work on children if we just set it once in the inspector)
-        currentFrame.transform.Rotate(0, 0, 180, Space.Self);
+        //currentFrame.transform.Rotate(0, 0, 180, Space.Self);
         //destroy all points from this frame
         foreach (Transform child in currentFrame.transform)
         {
@@ -86,15 +85,16 @@ public class AnimationController : MonoBehaviour
 
     public void UpdateFrames()
     {
-        if (canAnimate)
+        if (canAnimate && !isPaused)
         {
             fileIterator++;
-            if (fileIterator < fileCount)
+            if (fileIterator < fileReader.fileCount)
             {
-                pluginPCL.filename = fileNames[fileIterator];
+                pluginPCL.filename = "Assets/Resources/" + fileReader.fileNames[fileIterator];
             }
-            else if (fileIterator == fileCount + frameCount)
+            else if (fileIterator == fileReader.fileCount + frameCount)
             {
+                Debug.LogWarning("Animation finished");
                 canAnimate = false;
                 return;
             }
@@ -112,10 +112,10 @@ public class AnimationController : MonoBehaviour
 
     public void CallOutFrameSequenceEnd()
     {
-        Debug.LogWarning("Animation per second finished");
+        //empty function for anim event debug
     }
 
-    //to zostaje na poxniejsze testowanie czy uda nam sie przewijaæ klatkki szybciej
+    //pewnie niedlugo bedzie do wywalenia ale niech tu jeszcze narazie jest
     /*IEnumerator FixedFrameUpdate()
     {
         while (true)
