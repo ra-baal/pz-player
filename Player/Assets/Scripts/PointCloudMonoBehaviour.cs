@@ -5,7 +5,6 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEditor;
-using UnityEditor.VersionControl;
 
 public class PointCloudMonoBehaviour : MonoBehaviour
 {

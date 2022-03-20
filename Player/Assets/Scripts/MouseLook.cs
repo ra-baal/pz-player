@@ -10,8 +10,6 @@ public class MouseLook : MonoBehaviour {
 	public RotationAxes axes = RotationAxes.MouseXAndY;
 	public float sensitivityX = 20F;
 	public float sensitivityY = 20F;
-
-	public float sensitivityKeyboard = 10f;
 	
 	public float minimumX = -360F;
 	public float maximumX = 360F;
@@ -27,14 +25,49 @@ public class MouseLook : MonoBehaviour {
 	public float speed = 5.0f;
 	
 	Quaternion originalRotation;
-	
+
+	public Transform viewerBody;
+	public float mouseSensitivity = 100f;
+	float xRotation = 0f;
+
+	public bool useMouseToRotate = false;
+	public float sensitivityKeyboard = 10f;
+
 	void Update ()
 	{
-		if (Input.GetMouseButton (1)) {
-			if (axes == RotationAxes.MouseXAndY) {
+		if (useMouseToRotate)
+		{
+			float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+			float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+			xRotation -= mouseY;
+			xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+			transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+			viewerBody.Rotate(Vector3.up * mouseX);
+
+		}
+		else
+		{
+			// Up.
+			if (Input.GetKey(KeyCode.A))
+			{
+				transform.Translate(new Vector3(0, 1 / sensitivityKeyboard, 0));
+			}
+			// Down.
+			if (Input.GetKey(KeyCode.Z))
+			{
+				transform.Translate(new Vector3(0, -1 / sensitivityKeyboard, 0));
+			}
+		}
+
+		/*if (Input.GetMouseButton (1)) 
+		{
+			if (axes == RotationAxes.MouseXAndY) 
+			{
 					// Read the mouse input axis
-					rotationX += Input.GetAxis ("Mouse X") * sensitivityX;
-					rotationY += Input.GetAxis ("Mouse Y") * sensitivityY;
+					rotationX += Input.GetAxis ("Mouse X") * sensitivityX * Time.deltaTime;
+					rotationY += Input.GetAxis ("Mouse Y") * sensitivityY * Time.deltaTime;
 
 					rotationX = ClampAngle (rotationX, minimumX, maximumX);
 					rotationY = ClampAngle (rotationY, minimumY, maximumY);
@@ -43,58 +76,34 @@ public class MouseLook : MonoBehaviour {
 					Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, -Vector3.right);
 
 					transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-			} else if (axes == RotationAxes.MouseX) {
+			} 
+			else if (axes == RotationAxes.MouseX) 
+			{
 					rotationX += Input.GetAxis ("Mouse X") * sensitivityX;
 					rotationX = ClampAngle (rotationX, minimumX, maximumX);
 
 					Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
 					transform.localRotation = originalRotation * xQuaternion;
-			} else {
+			} 
+			else 
+			{
 					rotationY += Input.GetAxis ("Mouse Y") * sensitivityY;
 					rotationY = ClampAngle (rotationY, minimumY, maximumY);
 
 					Quaternion yQuaternion = Quaternion.AngleAxis (-rotationY, Vector3.right);
 					transform.localRotation = originalRotation * yQuaternion;
 			}
-		}
+		}*/
+	}
 
-		if(Input.GetKey(KeyCode.RightArrow))
-		{
-			transform.Translate(new Vector3(1 / sensitivityKeyboard,0,0));
-		}
-		if(Input.GetKey(KeyCode.LeftArrow))
-		{
-			transform.Translate(new Vector3(-1 / sensitivityKeyboard,0,0));
-		}
-		if(Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.Translate(new Vector3(0,0,-1 / sensitivityKeyboard));
-		}
-		if(Input.GetKey(KeyCode.UpArrow))
-		{
-			transform.Translate(new Vector3(0,0,1 / sensitivityKeyboard));
-		}
-
-		// Up.
-		if (Input.GetKey(KeyCode.A))
-		{
-			transform.Translate(new Vector3(0,1 / sensitivityKeyboard,0 ));
-		}
-		// Down.
-		if (Input.GetKey(KeyCode.Z))
-		{
-			transform.Translate(new Vector3(0,-1 / sensitivityKeyboard,0 ));
-		}
-
-
-	}	
-	
 	void Start ()
 	{
 		// Make the rigid body not change rotation
 		if (GetComponent<Rigidbody>())
 			GetComponent<Rigidbody>().freezeRotation = true;
 		originalRotation = transform.localRotation;
+
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	public static float ClampAngle (float angle, float min, float max)

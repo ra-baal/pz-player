@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
 using System.IO;
-using UnityEditor.SceneManagement;
+using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -13,12 +13,13 @@ public class MainMenuController : MonoBehaviour
     public Button playButton;
     public GameObject fileHolder;
     private FileReader fileReader;
+    public TMP_InputField inputField;
     string path;
 
     private void Start()
     {
         fileValid = false;
-        playButton.interactable = false;
+        playButton.interactable = true;
         fileReader = fileHolder.GetComponent<FileReader>();
     }
     public void LoadFile()
@@ -30,12 +31,16 @@ public class MainMenuController : MonoBehaviour
     }
     public void Apply()
     {
-        path = EditorUtility.OpenFolderPanel("Load video files", "", "");
+        //path = EditorUtility.OpenFolderPanel("Load video files", "", "");
+        path = @"C:/Users/klauo/Documents/GitHub/programowanie-zespolowe/TestFilmPCD";
         fileReader.SetVariables(path);
     }
 
     public void Play()
     {
+        path = inputField.text;
+        fileReader.SetVariables(path);
+
         bool isPcd = true;
         foreach (string line in System.IO.File.ReadLines(path + @"/settings.ini"))
         {

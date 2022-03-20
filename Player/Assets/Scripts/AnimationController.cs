@@ -36,14 +36,13 @@ public class AnimationController : MonoBehaviour
             //sets the filenames for first (frameCount) frames
             for (int i = 1; i < frameCount; i++)
             {
-                frames[i].GetComponent<PointCloudMonoBehaviour>().filename = "Assets/Resources/" + fileReader.fileNames[i];
+                frames[i].GetComponent<PointCloudMonoBehaviour>().filename = fileReader.folderPath + "/" + fileReader.fileNames[i];
                 //we read the clouds beforehand to allow bigger framerates
                 frames[i].GetComponent<PointCloudMonoBehaviour>().ShowCloud();
             }
             fileIterator = frameCount;
 
             canAnimate = true;
-            //StartCoroutine("FixedFrameUpdate");
         }
         else
         {
@@ -61,8 +60,8 @@ public class AnimationController : MonoBehaviour
     private void DisableCurrentFrame()
     {
         currentFrame.SetActive(false);
-        //frame has to be reseted to 0 rotation (rotation will not work on children if we just set it once in the inspector)
         //currentFrame.transform.Rotate(0, 0, 180, Space.Self);
+        currentFrame.transform.position = new Vector3(0f, 0f, 0f);
         //destroy all points from this frame
         foreach (Transform child in currentFrame.transform)
         {
@@ -80,6 +79,7 @@ public class AnimationController : MonoBehaviour
         //setup next frame
         currentFrame = frames[frameIterator];
         pluginPCL = currentFrame.GetComponent<PointCloudMonoBehaviour>();
+        currentFrame.transform.position = new Vector3(0f, 1f, -10f);
         currentFrame.SetActive(true);
     }
 
@@ -90,13 +90,14 @@ public class AnimationController : MonoBehaviour
             fileIterator++;
             if (fileIterator < fileReader.fileCount)
             {
-                pluginPCL.filename = "Assets/Resources/" + fileReader.fileNames[fileIterator];
+                pluginPCL.filename = fileReader.folderPath + "/" + fileReader.fileNames[fileIterator];
             }
             else if (fileIterator == fileReader.fileCount + frameCount)
             {
-                Debug.LogWarning("Animation finished");
-                canAnimate = false;
-                return;
+                fileIterator = 0;
+                Debug.LogWarning("Animation finished - playing again");
+                //canAnimate = false;
+                //return;
             }
 
             DisableCurrentFrame();
@@ -104,7 +105,7 @@ public class AnimationController : MonoBehaviour
 
             if (pluginPCL.cloudReady)
             {
-                currentFrame.transform.Rotate(0, 0, 180, Space.Self);
+                //currentFrame.transform.Rotate(0, 0, 180, Space.Self);
                 pluginPCL.cloudReady = false;
             }
         }
@@ -114,28 +115,4 @@ public class AnimationController : MonoBehaviour
     {
         //empty function for anim event debug
     }
-
-    //pewnie niedlugo bedzie do wywalenia ale niech tu jeszcze narazie jest
-    /*IEnumerator FixedFrameUpdate()
-    {
-        while (true)
-        {
-            for (int i = 0; i < frameCount; i++)
-            {
-                Debug.Log("file number: " + fileIterator);
-                UpdateFrames();
-                //Frames will be updated frameCount Times
-            }
-            yield return null; // continue next frame (Same as new WaitForSeconds(0) but more efficient)
-        }
-    }
-
-    private void Update()
-    {
-        if(!canAnimate)
-        {
-            StopCoroutine("FixedFrameUpdate");
-        }
-        UpdateFrames();
-    }*/
 }
