@@ -7,6 +7,8 @@ using static UnityEngine.ParticleSystem;
 
 public class ParticleCloudController : MonoBehaviour
 {
+    public PauseMenuManager pauseMenuManager;
+
     [Header("Parent objects")]
     [SerializeField] private List<GameObject> frames;
     private GameObject currentFrame;
@@ -100,6 +102,7 @@ public class ParticleCloudController : MonoBehaviour
         particleSystem.maxParticles = pointCount;
         particleSystem.emissionRate = pointCount;
 
+        Debug.Log("All set");
     }
 
     float timer = 0.0f;
@@ -108,23 +111,33 @@ public class ParticleCloudController : MonoBehaviour
 
     void LateUpdate()
     {
-        int particleCountCurr = particleSystem.GetParticles(particlesTmp, pointCount);
-
-        for (int i = 0; i < particleCountCurr; i++)
+        if (!pauseMenuManager.isPaused)
         {
-            particlesTmp[i].position = particles[i].position;
-            particlesTmp[i].startColor = particles[i].startColor;
+            if (particleSystem.isPaused) particleSystem.Play();
+
+            int particleCountCurr = particleSystem.GetParticles(particlesTmp, pointCount);
+
+            for (int i = 0; i < particleCountCurr; i++)
+            {
+                particlesTmp[i].position = particles[i].position;
+                particlesTmp[i].startColor = particles[i].startColor;
+            }
+            particleSystem.SetParticles(particlesTmp, pointCount);
+
+            timer += Time.deltaTime;
+            seconds = (int)(timer % 60);
+
+            if (fileIterator < fileReader.fileCount && seconds > secondsPast)
+            {
+                secondsPast = seconds;
+                ReadPCD(frames[0]);
+                fileIterator++;
+            }
         }
-        particleSystem.SetParticles(particlesTmp, pointCount);
-
-        timer += Time.deltaTime;
-        seconds = (int)(timer % 60);
-
-        if (fileIterator < fileReader.fileCount && seconds > secondsPast)
+        else
         {
-            secondsPast = seconds;
-            ReadPCD(frames[0]);
-            fileIterator++;
+            particleSystem.SetParticles(particlesTmp, 0);
+            particleSystem.Pause();
         }
     }
 }
