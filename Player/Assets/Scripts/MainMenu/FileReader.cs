@@ -13,7 +13,7 @@ public class FileReader : MonoBehaviour
     public void SetVariables(string path)
     {
         folderPath = path;
-        iniFilePath = path + @"/settings.ini";
+        iniFilePath = path + @"/settings.vrfilm";
 
         int counter = 0;
         bool firstLine = true;

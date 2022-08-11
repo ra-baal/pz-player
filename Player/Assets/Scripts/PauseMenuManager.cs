@@ -75,12 +75,12 @@ public class PauseMenuManager : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKey(KeyCode.Escape) == true) && isPaused)
+        if ((Input.GetKeyDown(KeyCode.Escape) == true) && isPaused)
         {
             Debug.Log("unpause");
             UnPause();
         }
-        else if((Input.GetKey(KeyCode.Escape)==true) && !isPaused)
+        else if((Input.GetKeyDown(KeyCode.Escape)==true) && !isPaused)
         {
             Debug.Log("pause");
             Pause();
