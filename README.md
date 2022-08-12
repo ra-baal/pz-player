@@ -1,2 +1,4 @@
-# programowanie-zespolowe
+# pz-player
+
+Desktop and VR Unity
  
