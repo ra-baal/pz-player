@@ -28,7 +28,6 @@ public class FileReader : MonoBehaviour
             }
             else if(firstLine)
             {
-                Debug.Log("PLY file txt" + line);
                 firstLine = false;
                 secondLine = true;
             }

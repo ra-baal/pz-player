@@ -3,33 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEditor;
+using System.IO;
+using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    //public bool fileValid = false; //bedzie trzeba wywalic blad jak plik bedzie zly yadayada
-    //public Button playButton;
-    public GameObject fileHolder = null;
-    //private FileReader fileReader;
-    //string path;
-
-    bool fileValid = false; //bedzie trzeba wywalic blad jak plik bedzie zly yadayada
+    public bool fileValid = false; //bedzie trzeba wywalic blad jak plik bedzie zly yadayada
     public Button playButton;
+    public GameObject fileHolder;
+    private FileReader fileReader;
+    public TMP_InputField inputField;
+    string path;
 
     private void Start()
     {
         fileValid = false;
-        playButton.interactable = false;
+        playButton.interactable = true;
+        fileReader = fileHolder.GetComponent<FileReader>();
     }
     public void LoadFile()
     {
-        Debug.Log("File loaded and can be transfered to the next scene");
+        Apply();
+        Debug.Log("Folder loaded and can be transfered to the next scene");
         fileValid = true;
         playButton.interactable = true;
     }
+    public void Apply()
+    {
+        //path = EditorUtility.OpenFolderPanel("Load video files", "", "");
+        path = @"C:/Users/klauo/Documents/GitHub/programowanie-zespolowe/TestFilmPCD";
+        fileReader.SetVariables(path);
+    }
+
     public void Play()
     {
+        path = inputField.text;
+        fileReader.SetVariables(path);
+
+        bool isPcd = true;
+        foreach (string line in System.IO.File.ReadLines(path + @"/settings.ini"))
+        {
+            if (line == "ply") isPcd = false;
+            break;
+        }
+
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadYourAsyncScene(isPcd));
     }
 
     IEnumerator LoadYourAsyncScene(bool isPcd)
@@ -52,9 +72,9 @@ public class MainMenuController : MonoBehaviour
 
         // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
         if (isPcd)
-            SceneManager.MoveGameObjectToScene(fileHolder, SceneManager.GetSceneByName("scenePCD"));
+            SceneManager.MoveGameObjectToScene(fileHolder, SceneManager.GetSceneByName("PlayScene"));
         else
-            SceneManager.MoveGameObjectToScene(fileHolder, SceneManager.GetSceneByName("scenePLY"));
+            SceneManager.MoveGameObjectToScene(fileHolder, SceneManager.GetSceneByName("PlayScenePLY"));
         // Unload the previous Scene
         SceneManager.UnloadSceneAsync(currentScene);
     }

@@ -4,19 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainMenuScene.unity
-    guid: 460d5d950f2b2184194d673951c46e22
-  - enabled: 1
-    path: Assets/Scenes/scenePLY.unity
-    guid: 492270b8b2bf710488add5025214489c
+  m_Scenes: []
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
-      type: 2}
-    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 839b31d79069afe479b5fd49ed9011cf,
-      type: 2}
-    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba,
-      type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305,
-      type: 2}
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 0e883de597adfc542bbf5ca1d9cf6b4e, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0c0673313579e2e47970b7b75899ce93, type: 2}

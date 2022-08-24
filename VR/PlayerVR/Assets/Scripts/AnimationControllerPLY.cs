@@ -46,10 +46,20 @@ public class AnimationControllerPLY : MonoBehaviour
 
             if (it < meshArraySize)
             {
-                Mesh mesh = (Mesh)AssetDatabase.LoadAssetAtPath("Assets/Resources/" + fileName, typeof(Mesh));
+                GameObject obj = Instantiate(Resources.Load("Assets/Resources/" + fileName) as GameObject);
+                Mesh mesh = obj.GetComponent<MeshFilter>().mesh;
+
+                /*Mesh holderMesh = new Mesh();
+                ObjImporter newMesh = new ObjImporter();
+                holderMesh = newMesh.ImportFile("C:/Users/cvpa2/Desktop/ng/output.obj");
+
+                MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
+                MeshFilter filter = gameObject.AddComponent<MeshFilter>();
+                filter.mesh = holderMesh;*/
+
                 meshes[it] = mesh;
 
-                if (mesh == null)
+                if (meshes[it] == null)
                 {
                     Debug.Log("NULL");
                 }
@@ -66,7 +76,6 @@ public class AnimationControllerPLY : MonoBehaviour
     public void ReplaceAsset()
     {
         /*File.Copy(fileReaderPLY.folderPath + "/" + fileReaderPLY.fileNames[fileIterator], Application.dataPath + "/Resources/" + fileReaderPLY.fileNames[fileIterator]);
-        //AssetDatabase.ImportAsset("Assets/Resources/" + fileName);
         AssetDatabase.Refresh();
         Debug.Log("dodano asset");
 
@@ -83,9 +92,9 @@ public class AnimationControllerPLY : MonoBehaviour
         }
         fileIterator++;*/
 
-        string fileName = fileReader.fileNames[fileIterator];
+        /*string fileName = fileReader.fileNames[fileIterator];
         Mesh mesh = (Mesh)AssetDatabase.LoadAssetAtPath("Assets/Resources/" + fileName, typeof(Mesh));
-        meshes[meshIterator] = mesh;
+        meshes[meshIterator] = mesh;*/
         fileIterator++;
     }
 
