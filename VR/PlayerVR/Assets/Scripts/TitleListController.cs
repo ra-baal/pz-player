@@ -15,15 +15,27 @@ public class TitleListController : MonoBehaviour
     }
     void GenerateTitleList()
     {
-        List<string> dirs = new List<string>(Directory.EnumerateDirectories(Application.persistentDataPath + "\\LoopReality\\"));
+        DirectoryInfo dataDir = new DirectoryInfo(Application.persistentDataPath + "/LoopReality");
 
-        foreach (var dir in dirs)
+        try
         {
-            GameObject title = Instantiate(titleTemplate) as GameObject;
-            title.SetActive(true);
+            DirectoryInfo[] directories = dataDir.GetDirectories();
+            Debug.Log(Application.persistentDataPath + "/LoopReality\nFound titles: " + directories.Length);
 
-            title.GetComponent<TitleListElement>().SetText($"{dir.Substring(dir.LastIndexOf(Path.DirectorySeparatorChar) + 1)}");
-            title.transform.SetParent(titleTemplate.transform.parent, false);
+            foreach (var directory in directories)
+            {
+                var name = directory.Name;
+                Debug.Log("Found title: " + name);
+
+                GameObject title = Instantiate(titleTemplate) as GameObject;
+                title.SetActive(true);
+                title.GetComponent<TitleListElement>().SetText(name);
+                title.transform.SetParent(titleTemplate.transform.parent, false);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e);
         }
     }
     

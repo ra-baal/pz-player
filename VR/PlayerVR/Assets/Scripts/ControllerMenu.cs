@@ -6,35 +6,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ControllerMenu : MonoBehaviour
 {
-    [SerializeField] private TMP_Text LogText;
-    [SerializeField] private TextMeshProUGUI FPS;
-    [SerializeField] private TextMeshProUGUI Clock;
-    [SerializeField] private TextMeshProUGUI Temperature;
-    [SerializeField] private Button clearButton;
-    [SerializeField] private Button saveButton;
+    [SerializeField] private TextMeshProUGUI pausePlayText;
+    [SerializeField] private Button pausePlayButton;
+    [SerializeField] private Button mainMenuButton;
+    [SerializeField] private Button quitButton;
+
+    [SerializeField] private GameObject rightController;
 
     private float alpha;
     private bool visible;
+    private bool pause;
 
     private new Camera camera;
 
     private void OnValidate()
     {
-        Assert.IsNotNull(LogText);
-        Assert.IsNotNull(FPS);
-        Assert.IsNotNull(Clock);
-        Assert.IsNotNull(Temperature);
-        Assert.IsNotNull(clearButton);
-        Assert.IsNotNull(saveButton);
+        Assert.IsNotNull(pausePlayButton);
+        Assert.IsNotNull(mainMenuButton);
+        Assert.IsNotNull(quitButton);
     }
 
     private void Start()
     {
-        //clearButton.onClick.AddListener(() => { LogText.text = ""; });
-        //saveButton.onClick.AddListener(SaveLogs);
+        mainMenuButton.onClick.AddListener(() => { SceneManager.LoadScene("MainMenu"); });
+        quitButton.onClick.AddListener(() => { Application.Quit(); });
+        pausePlayButton.onClick.AddListener(PausePlay);
         camera = Camera.main;
     }
     void Update()
@@ -46,6 +47,7 @@ public class ControllerMenu : MonoBehaviour
             if (!visible)
             {
                 visible = true;
+                rightController.GetComponent<XRRayInteractor>().enabled = true;
             }
         }
         else
@@ -54,12 +56,26 @@ public class ControllerMenu : MonoBehaviour
             if (visible)
             {
                 visible = false;
+                rightController.GetComponent<XRRayInteractor>().enabled = false;
             }
         }
         GetComponent<CanvasGroup>().alpha = alpha;
     }
+    private void PausePlay()
+    {
+        if (pause)
+        {
+            pausePlayText.text = "Play";
+        }
+        else
+        {
+            pausePlayText.text = "Pause";
+        }
+    }
     void OnDestroy()
     {
-        saveButton.onClick.RemoveAllListeners();
+        pausePlayButton.onClick.RemoveAllListeners();
+        mainMenuButton.onClick.RemoveAllListeners();
+        quitButton.onClick.RemoveAllListeners();
     }
 }

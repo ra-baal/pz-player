@@ -13,15 +13,17 @@ public class FileReader : MonoBehaviour
     public void SetVariables(string path)
     {
         folderPath = path;
-        iniFilePath = path + @"/kinectv2-settings.vrfilm";
+        iniFilePath = path + "/kinectv2-settings.vrfilm";
 
         int counter = 0;
         bool firstLine = true;
         bool secondLine = false;
+        bool thirdLine = false;
+
         foreach (string line in System.IO.File.ReadLines(iniFilePath))
         {
             Debug.Log(line);
-            if (!firstLine && !secondLine)
+            if (!firstLine && !secondLine && !thirdLine)
             {
                 fileNames.Add(line);
                 counter++;
@@ -33,8 +35,13 @@ public class FileReader : MonoBehaviour
             }
             else if(secondLine)
             {
-                fileCount = int.Parse(line);
                 secondLine = false;
+                thirdLine = true;
+            }
+            else if (thirdLine)
+            {
+                fileCount = int.Parse(line);
+                thirdLine = false;
             }
         }
     }

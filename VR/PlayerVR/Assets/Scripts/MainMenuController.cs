@@ -21,13 +21,13 @@ public class MainMenuController : MonoBehaviour
         fileValid = false;
         playButton.interactable = false;
         fileReader = fileHolder.GetComponent<FileReader>();
-        path = Application.persistentDataPath + "\\LoopReality\\";
+        path = Application.persistentDataPath + "/LoopReality/";
         //path = "E:\\Julia\\PCL\\";
     }
     public void LoadFile(string selectedTitle)
     {
         folder = selectedTitle;
-        if (System.IO.File.Exists(path + folder + "\\kinectv2-settings.vrfilm"))
+        if (System.IO.File.Exists(path + folder + "/kinectv2-settings.vrfilm"))
         {
             fileReader.SetVariables(path + folder);
             Debug.Log("Folder loaded and can be transfered to the next scene");
