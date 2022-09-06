@@ -32,7 +32,7 @@ public class MainMenuController : MonoBehaviour
     public void Apply()
     {
         //path = EditorUtility.OpenFolderPanel("Load video files", "", "");
-        path = @"C:/Users/klauo/Documents/GitHub/programowanie-zespolowe/TestFilmPCD";
+        path = inputField.text;
         fileReader.SetVariables(path);
     }
 
@@ -42,7 +42,7 @@ public class MainMenuController : MonoBehaviour
         fileReader.SetVariables(path);
 
         bool isPcd = true;
-        foreach (string line in System.IO.File.ReadLines(path + @"/settings.vrfilm"))
+        foreach (string line in System.IO.File.ReadLines(path + @"/frame-settings.vrfilm"))
         {
             if (line == "ply") isPcd = false;
             break;

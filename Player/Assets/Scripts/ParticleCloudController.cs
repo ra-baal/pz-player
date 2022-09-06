@@ -84,11 +84,21 @@ public class ParticleCloudController : MonoBehaviour
             else if(fileIter > 11)
             {
                 string[] info = line.Split(' ');
-                float x = float.Parse(info[0], CultureInfo.InvariantCulture.NumberFormat)*20;
-                float y = float.Parse(info[1], CultureInfo.InvariantCulture.NumberFormat)*20;
-                float z = float.Parse(info[2], CultureInfo.InvariantCulture.NumberFormat)*20;
+                float x, y, z;
 
-                UInt32 color = UInt32.Parse(info[3]);
+                if (info[0] == "nan") x = 1;
+                else x = float.Parse(info[0], CultureInfo.InvariantCulture.NumberFormat)*20;
+
+                if (info[1] == "nan") y = 1;
+                else y = float.Parse(info[1], CultureInfo.InvariantCulture.NumberFormat)*20;
+
+                if (info[2] == "nan") z = 1;
+                else z = float.Parse(info[2], CultureInfo.InvariantCulture.NumberFormat)*20;
+
+                UInt32 color;
+                if (info[3] == "nan") color = UInt32.Parse("1111111110");
+                else color = UInt32.Parse(info[3]);
+
                 byte[] bytes = BitConverter.GetBytes(color);
 
                 particles[particleIter].position = new Vector3(x,y,z);

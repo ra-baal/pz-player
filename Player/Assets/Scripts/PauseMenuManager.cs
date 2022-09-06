@@ -59,7 +59,7 @@ public class PauseMenuManager : MonoBehaviour
 
         // The Application loads the Scene in the background at the same time as the current Scene.
         AsyncOperation asyncLoad;
-        asyncLoad = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+        asyncLoad = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
 
         // Wait until the last operation fully loads to return anything
         while (!asyncLoad.isDone)

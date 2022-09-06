@@ -13,28 +13,34 @@ public class FileReader : MonoBehaviour
     public void SetVariables(string path)
     {
         folderPath = path;
-        iniFilePath = path + @"/settings.vrfilm";
+        iniFilePath = path + @"/frame-settings.vrfilm";
 
         int counter = 0;
-        bool firstLine = true;
+        bool pcdLine = true;
         bool secondLine = false;
+        bool framesCountLine = false;
         foreach (string line in System.IO.File.ReadLines(iniFilePath))
         {
             Debug.Log(line);
-            if (!firstLine && !secondLine)
+            if (!pcdLine && !secondLine && !framesCountLine)
             {
                 fileNames.Add(line);
                 counter++;
             }
-            else if(firstLine)
+            else if(pcdLine)
             {
-                firstLine = false;
+                pcdLine = false;
                 secondLine = true;
             }
             else if(secondLine)
             {
-                fileCount = int.Parse(line);
                 secondLine = false;
+                framesCountLine = true;
+            }
+            else if(framesCountLine)
+            {
+                fileCount = int.Parse(line);
+                framesCountLine = false;
             }
         }
     }

@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359134410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1153811368}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: UnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &359134410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5300,7 +5312,6 @@ GameObject:
   - component: {fileID: 426093661}
   - component: {fileID: 426093660}
   - component: {fileID: 426093658}
-  - component: {fileID: 426093657}
   - component: {fileID: 426093662}
   m_Layer: 0
   m_Name: Main Camera
@@ -5309,14 +5320,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &426093657
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426093656}
-  m_Enabled: 1
 --- !u!124 &426093658
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5394,7 +5397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6d565ffa00cdc49b4af8aefe2051d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   pauseMenuManager: {fileID: 1153811368}
   viewerBody: {fileID: 576767079}
   mouseSensitivity: 10
@@ -5726,7 +5729,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 512632240}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1153811368}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: GoBackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &512632240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11252,7 +11267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1239561265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11260,7 +11275,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239561264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -11299,7 +11314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239561264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -11831,7 +11846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aced18bd2a70524b90898356d220a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  folderPath: C:\Users\klauo\Documents\GitHub\programowanie-zespolowe\VideoPCD
+  folderPath: C:\Users\klauo\Desktop\30sek
   iniFilePath: 
   fileCount: 9
   fileNames:
