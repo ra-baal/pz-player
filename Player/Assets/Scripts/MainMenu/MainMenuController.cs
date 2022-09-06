@@ -79,6 +79,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentScene);
     }
 
+    public void ShowControls()
+    {
+        Debug.Log("Showing help text");
+    }
+
     public void Quit()
     {
         Debug.Log("Quitting player");
