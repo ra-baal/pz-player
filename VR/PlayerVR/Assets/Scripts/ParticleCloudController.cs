@@ -7,21 +7,12 @@ using static UnityEngine.ParticleSystem;
 
 public class ParticleCloudController : MonoBehaviour
 {
-    [Header("Parent objects")]
     [SerializeField] private List<GameObject> frames;
+    [SerializeField] private FileReader fileReader;
+    [SerializeField] private MainMenuController mmc;
+
     private GameObject currentFrame;
-    public FileReader fileReader;
-
-    private int frameIterator;
-    private int frameCount;
-
-    private bool canAnimate;
-
     private int fileIterator;
-
-    private void Awake()
-    {
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,28 +21,14 @@ public class ParticleCloudController : MonoBehaviour
 
         if (frames.Count != 0 && fileReader.fileCount != 0)
         {
-            frameCount = frames.Count;
-            frameIterator = 0;
-
             ReadPCD(frames[0]);
             fileIterator++;
             currentFrame = frames[0];
             currentFrame.SetActive(true);
-
-            //sets the filenames for first (frameCount) frames
-            /*for (int i = 1; i < frameCount; i++)
-            {
-                ReadPCD(frames[i]);
-                fileIterator++;
-            }*/
-            //fileIterator = frameCount;
-
-            canAnimate = true;
         }
         else
         {
             Debug.LogError("No frames added to the list!");
-            canAnimate = false;
         }
     }
 
@@ -72,24 +49,24 @@ public class ParticleCloudController : MonoBehaviour
 
         foreach (string line in System.IO.File.ReadLines(file))
         {
-            if(fileIter == 9)
+            if (fileIter == 9)
             {
                 string s_pointCount = line.Split(' ')[1];
                 pointCount = int.Parse(s_pointCount);
                 particles = new Particle[pointCount];
                 particlesTmp = new Particle[pointCount];
             }
-            else if(fileIter > 11)
+            else if (fileIter > 11)
             {
                 string[] info = line.Split(' ');
-                float x = float.Parse(info[0], CultureInfo.InvariantCulture.NumberFormat)*20;
-                float y = float.Parse(info[1], CultureInfo.InvariantCulture.NumberFormat)*20;
-                float z = float.Parse(info[2], CultureInfo.InvariantCulture.NumberFormat)*20;
+                float x = float.Parse(info[0], CultureInfo.InvariantCulture.NumberFormat) * 20;
+                float y = float.Parse(info[1], CultureInfo.InvariantCulture.NumberFormat) * 20;
+                float z = float.Parse(info[2], CultureInfo.InvariantCulture.NumberFormat) * 20;
 
                 UInt32 color = UInt32.Parse(info[3]);
                 byte[] bytes = BitConverter.GetBytes(color);
 
-                particles[particleIter].position = new Vector3(x,y,z);
+                particles[particleIter].position = new Vector3(x, y, z);
                 particles[particleIter].startColor = new Color32(bytes[0], bytes[1], bytes[2], 255);
                 particles[particleIter].color = new Color32(bytes[0], bytes[1], bytes[2], 255);
                 particleIter++;
@@ -100,6 +77,7 @@ public class ParticleCloudController : MonoBehaviour
         particleSystem.maxParticles = pointCount;
         particleSystem.emissionRate = pointCount;
 
+        Debug.Log("All set");
     }
 
     float timer = 0.0f;
@@ -108,23 +86,33 @@ public class ParticleCloudController : MonoBehaviour
 
     void LateUpdate()
     {
-        int particleCountCurr = particleSystem.GetParticles(particlesTmp, pointCount);
-
-        for (int i = 0; i < particleCountCurr; i++)
+        if (!mmc.Pause)
         {
-            particlesTmp[i].position = particles[i].position;
-            particlesTmp[i].startColor = particles[i].startColor;
+            if (particleSystem.isPaused) particleSystem.Play();
+
+            int particleCountCurr = particleSystem.GetParticles(particlesTmp, pointCount);
+
+            for (int i = 0; i < particleCountCurr; i++)
+            {
+                particlesTmp[i].position = particles[i].position;
+                particlesTmp[i].startColor = particles[i].startColor;
+            }
+            particleSystem.SetParticles(particlesTmp, pointCount);
+
+            timer += Time.deltaTime;
+            seconds = (int)(timer % 60);
+
+            if (fileIterator <= fileReader.fileCount && seconds > secondsPast)
+            {
+                secondsPast = seconds;
+                ReadPCD(frames[0]);
+                fileIterator++;
+            }
         }
-        particleSystem.SetParticles(particlesTmp, pointCount);
-
-        timer += Time.deltaTime;
-        seconds = (int)(timer % 60);
-
-        if (fileIterator < fileReader.fileCount && seconds > secondsPast)
+        else if (!particleSystem.isPaused)
         {
-            secondsPast = seconds;
-            ReadPCD(frames[0]);
-            fileIterator++;
+            particleSystem.SetParticles(particlesTmp, 0);
+            particleSystem.Pause();
         }
     }
 }

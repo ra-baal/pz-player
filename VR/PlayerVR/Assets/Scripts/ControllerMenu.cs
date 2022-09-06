@@ -11,16 +11,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ControllerMenu : MonoBehaviour
 {
+    private new GameObject particleSystem;
+    private GameObject menu;
+    private MainMenuController mmc;
+
     [SerializeField] private TextMeshProUGUI pausePlayText;
     [SerializeField] private Button pausePlayButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button quitButton;
 
-    [SerializeField] private GameObject rightController;
+    private GameObject rightController;
 
     private float alpha;
     private bool visible;
-    private bool pause;
 
     private new Camera camera;
 
@@ -33,17 +36,26 @@ public class ControllerMenu : MonoBehaviour
 
     private void Start()
     {
-        mainMenuButton.onClick.AddListener(() => { SceneManager.LoadScene("MainMenu"); });
+        rightController = GameObject.Find("RightHand Controller");
+        particleSystem = GameObject.Find("Particle System");
+        menu = GameObject.Find("MenuController");
+        mmc = menu.GetComponent<MainMenuController>();
+
+        mainMenuButton.onClick.AddListener(() => {
+            particleSystem.SetActive(false);
+            camera.clearFlags = CameraClearFlags.Skybox;
+            menu.SetActive(true);
+        });
         quitButton.onClick.AddListener(() => { Application.Quit(); });
         pausePlayButton.onClick.AddListener(PausePlay);
-        camera = Camera.main;
+        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
     void Update()
     {
         float angle = Vector3.Angle(transform.forward, camera.transform.forward);
-        if (angle < 80.0f)
+        if (angle < 60.0f && !mmc.Pause)
         {
-            alpha = angle <= 50.0f ? 1.0f : (angle - 50.0f) / 30.0f;
+            alpha = 1.0f;
             if (!visible)
             {
                 visible = true;
@@ -63,12 +75,16 @@ public class ControllerMenu : MonoBehaviour
     }
     private void PausePlay()
     {
-        if (pause)
+        if (mmc.Pause)
         {
+            mmc.Pause = false;
+            Time.timeScale = 1f;
             pausePlayText.text = "Play";
         }
         else
         {
+            mmc.Pause = true;
+            Time.timeScale = 0f;
             pausePlayText.text = "Pause";
         }
     }

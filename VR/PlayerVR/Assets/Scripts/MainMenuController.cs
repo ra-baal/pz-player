@@ -6,23 +6,32 @@ using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject fileHolder;
-    private FileReader fileReader;
+    public bool Pause;
+
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject movie;
 
     [SerializeField] private Button playButton;
     [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private Camera mainCamera;
 
-    string path;
-    string folder;
-    bool fileValid;
+    public GameObject fileHolder;
+    private FileReader fileReader;
 
+    private string path;
+    private string folder;
+
+
+    private void Awake()
+    {
+        mainCamera.clearFlags = CameraClearFlags.Skybox;
+    }
     private void Start()
     {
-        fileValid = false;
+        Pause = false;
         playButton.interactable = false;
         fileReader = fileHolder.GetComponent<FileReader>();
         path = Application.persistentDataPath + "/LoopReality/";
-        //path = "E:\\Julia\\PCL\\";
     }
     public void LoadFile(string selectedTitle)
     {
@@ -43,42 +52,9 @@ public class MainMenuController : MonoBehaviour
 
     public void Play()
     {
-        bool isPcd = true;
-        foreach (string line in System.IO.File.ReadLines(path + folder + @"/kinectv2-settings.vrfilm"))
-        {
-            if (line == "ply") isPcd = false;
-            break;
-        }
-
-        Time.timeScale = 1f;
-        StartCoroutine(LoadYourAsyncScene(isPcd));
-    }
-
-    IEnumerator LoadYourAsyncScene(bool isPcd)
-    {
-        // Set the current Scene to be able to unload it later
-        Scene currentScene = SceneManager.GetActiveScene();
-
-        // The Application loads the Scene in the background at the same time as the current Scene.
-        AsyncOperation asyncLoad;
-        if (isPcd)
-            asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
-        else
-            asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 2, LoadSceneMode.Additive);
-
-        // Wait until the last operation fully loads to return anything
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
-        if (isPcd)
-            SceneManager.MoveGameObjectToScene(fileHolder, SceneManager.GetSceneByName("PlayerPCD"));
-        else
-            SceneManager.MoveGameObjectToScene(fileHolder, SceneManager.GetSceneByName("PlayerPLY"));
-        // Unload the previous Scene
-        SceneManager.UnloadSceneAsync(currentScene);
+        menu.SetActive(false);
+        mainCamera.clearFlags = CameraClearFlags.SolidColor;
+        movie.SetActive(true);
     }
 
     public void Quit()
