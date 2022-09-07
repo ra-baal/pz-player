@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 public class FileReader : MonoBehaviour
@@ -8,12 +6,13 @@ public class FileReader : MonoBehaviour
     public string folderPath;
     public string iniFilePath;
     public int fileCount;
+    public float offset;
     public List<string> fileNames;
 
     public void SetVariables(string path)
     {
         folderPath = path;
-        iniFilePath = path + "/kinectv2-settings.vrfilm";
+        iniFilePath = path + "/settings.vrfilm";
 
         int counter = 0;
         bool firstLine = true;
@@ -35,6 +34,7 @@ public class FileReader : MonoBehaviour
             }
             else if(secondLine)
             {
+                offset = int.Parse(line) / 1000.0f;
                 secondLine = false;
                 thirdLine = true;
             }

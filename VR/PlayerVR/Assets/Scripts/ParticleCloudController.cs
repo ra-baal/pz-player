@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
@@ -9,17 +8,26 @@ public class ParticleCloudController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> frames;
     [SerializeField] private FileReader fileReader;
-    [SerializeField] private MainMenuController mmc;
+    [SerializeField] private ControllerSystem cs;
 
     private GameObject currentFrame;
     private int fileIterator;
+    private int fileCount;
 
-    // Start is called before the first frame update
-    void Start()
+    private float timer;
+    private int seconds;
+    private int secondsPast;
+
+    void Awake()
     {
         fileReader = FindObjectOfType<FileReader>();
+        fileCount = fileReader.fileCount;
 
-        if (frames.Count != 0 && fileReader.fileCount != 0)
+        timer = 0.0f;
+        seconds = 0;
+        secondsPast = 0;
+
+        if (frames.Count != 0 && fileCount != 0)
         {
             ReadPCD(frames[0]);
             fileIterator++;
@@ -32,7 +40,7 @@ public class ParticleCloudController : MonoBehaviour
         }
     }
 
-    ParticleSystem particleSystem = null;
+    new ParticleSystem particleSystem = null;
     Particle[] particles = null;
     Particle[] particlesTmp = null;
     int pointCount = 0;
@@ -79,14 +87,13 @@ public class ParticleCloudController : MonoBehaviour
 
         Debug.Log("All set");
     }
-
-    float timer = 0.0f;
-    int secondsPast = 0;
-    int seconds = 0;
-
     void LateUpdate()
     {
-        if (!mmc.Pause)
+        if (fileIterator >= fileCount)
+        {
+            cs.ToggleMovieToMenu();
+        }
+        else if (!cs.Pause)
         {
             if (particleSystem.isPaused) particleSystem.Play();
 
@@ -102,9 +109,8 @@ public class ParticleCloudController : MonoBehaviour
             timer += Time.deltaTime;
             seconds = (int)(timer % 60);
 
-            if (fileIterator <= fileReader.fileCount && seconds > secondsPast)
+            if (seconds > secondsPast)
             {
-                secondsPast = seconds;
                 ReadPCD(frames[0]);
                 fileIterator++;
             }

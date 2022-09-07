@@ -1,31 +1,25 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using UnityEngine.Assertions;
-using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ControllerMenu : MonoBehaviour
 {
-    private new GameObject particleSystem;
-    private GameObject menu;
-    private MainMenuController mmc;
-
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI pausePlayText;
     [SerializeField] private Button pausePlayButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button quitButton;
 
-    private GameObject rightController;
+    [Header("Setup")]
+    [SerializeField] private ControllerSystem cs;
+    [SerializeField] private XRRayInteractor rightController;
 
     private float alpha;
     private bool visible;
 
-    private new Camera camera;
+    private Camera mainCamera;
 
     private void OnValidate()
     {
@@ -36,30 +30,24 @@ public class ControllerMenu : MonoBehaviour
 
     private void Start()
     {
-        rightController = GameObject.Find("RightHand Controller");
-        particleSystem = GameObject.Find("Particle System");
-        menu = GameObject.Find("MenuController");
-        mmc = menu.GetComponent<MainMenuController>();
-
-        mainMenuButton.onClick.AddListener(() => {
-            particleSystem.SetActive(false);
-            camera.clearFlags = CameraClearFlags.Skybox;
-            menu.SetActive(true);
-        });
+        mainMenuButton.onClick.AddListener(() => { cs.ToggleMovieToMenu(); });;
         quitButton.onClick.AddListener(() => { Application.Quit(); });
         pausePlayButton.onClick.AddListener(PausePlay);
-        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        var controller = GameObject.Find("[LeftHand Controller] Model Parent").transform;
+        gameObject.transform.SetParent(controller, false);
     }
     void Update()
     {
-        float angle = Vector3.Angle(transform.forward, camera.transform.forward);
-        if (angle < 60.0f && !mmc.Pause)
+        float angle = Vector3.Angle(transform.forward, mainCamera.transform.forward);
+        if (angle < 60.0f && !cs.menuActive)
         {
             alpha = 1.0f;
             if (!visible)
             {
                 visible = true;
-                rightController.GetComponent<XRRayInteractor>().enabled = true;
+                rightController.enabled = true;
             }
         }
         else
@@ -68,22 +56,22 @@ public class ControllerMenu : MonoBehaviour
             if (visible)
             {
                 visible = false;
-                rightController.GetComponent<XRRayInteractor>().enabled = false;
+                rightController.enabled = false;
             }
         }
         GetComponent<CanvasGroup>().alpha = alpha;
     }
     private void PausePlay()
     {
-        if (mmc.Pause)
+        if (cs.Pause)
         {
-            mmc.Pause = false;
+            cs.Pause = false;
             Time.timeScale = 1f;
             pausePlayText.text = "Play";
         }
         else
         {
-            mmc.Pause = true;
+            cs.Pause = true;
             Time.timeScale = 0f;
             pausePlayText.text = "Pause";
         }

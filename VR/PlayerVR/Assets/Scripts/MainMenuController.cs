@@ -1,26 +1,20 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    public bool Pause;
-
-    [SerializeField] private GameObject menu;
-    [SerializeField] private GameObject movie;
-
-    [SerializeField] private Button playButton;
-    [SerializeField] private TextMeshProUGUI title;
+    [Header("Control")]
+    [SerializeField] private ControllerSystem cs;
+    [SerializeField] private FileReader fileReader;
     [SerializeField] private Camera mainCamera;
 
-    public GameObject fileHolder;
-    private FileReader fileReader;
+    [Header("UI")]
+    [SerializeField] private Button playButton;
+    [SerializeField] private TextMeshProUGUI title;
 
     private string path;
     private string folder;
-
 
     private void Awake()
     {
@@ -28,15 +22,13 @@ public class MainMenuController : MonoBehaviour
     }
     private void Start()
     {
-        Pause = false;
         playButton.interactable = false;
-        fileReader = fileHolder.GetComponent<FileReader>();
         path = Application.persistentDataPath + "/LoopReality/";
     }
     public void LoadFile(string selectedTitle)
     {
         folder = selectedTitle;
-        if (System.IO.File.Exists(path + folder + "/kinectv2-settings.vrfilm"))
+        if (System.IO.File.Exists(path + folder + "/settings.vrfilm"))
         {
             fileReader.SetVariables(path + folder);
             Debug.Log("Folder loaded and can be transfered to the next scene");
@@ -49,12 +41,9 @@ public class MainMenuController : MonoBehaviour
             playButton.interactable = false;
         }
     }
-
     public void Play()
     {
-        menu.SetActive(false);
-        mainCamera.clearFlags = CameraClearFlags.SolidColor;
-        movie.SetActive(true);
+        cs.ToggleMenuToMovie();
     }
 
     public void Quit()
