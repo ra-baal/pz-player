@@ -18,6 +18,7 @@ public class ControllerMenu : MonoBehaviour
 
     private float alpha;
     private bool visible;
+    private CanvasGroup cg;
 
     private Camera mainCamera;
 
@@ -30,18 +31,20 @@ public class ControllerMenu : MonoBehaviour
 
     private void Start()
     {
-        mainMenuButton.onClick.AddListener(() => { cs.ToggleMovieToMenu(); });;
+        mainMenuButton.onClick.AddListener(() => {
+            cs.ToggleMovieToMenu(); });;
         quitButton.onClick.AddListener(() => { Application.Quit(); });
         pausePlayButton.onClick.AddListener(PausePlay);
 
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         var controller = GameObject.Find("[LeftHand Controller] Model Parent").transform;
         gameObject.transform.SetParent(controller, false);
+        cg = GetComponent<CanvasGroup>();
     }
     void Update()
     {
         float angle = Vector3.Angle(transform.forward, mainCamera.transform.forward);
-        if (angle < 60.0f && !cs.menuActive)
+        if (angle < 60.0f)
         {
             alpha = 1.0f;
             if (!visible)
@@ -59,7 +62,7 @@ public class ControllerMenu : MonoBehaviour
                 rightController.enabled = false;
             }
         }
-        GetComponent<CanvasGroup>().alpha = alpha;
+        cg.alpha = alpha;
     }
     private void PausePlay()
     {
@@ -67,13 +70,13 @@ public class ControllerMenu : MonoBehaviour
         {
             cs.Pause = false;
             Time.timeScale = 1f;
-            pausePlayText.text = "Play";
+            pausePlayText.text = "Pause";
         }
         else
         {
             cs.Pause = true;
             Time.timeScale = 0f;
-            pausePlayText.text = "Pause";
+            pausePlayText.text = "Play";
         }
     }
     void OnDestroy()
