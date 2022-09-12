@@ -36,7 +36,7 @@ public class ParticleCloudController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No frames added to the list!");
+            Debug.Log("No frames added to the list!");
         }
     }
 

@@ -43,6 +43,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Play()
     {
+        playButton.interactable = false;
         cs.ToggleMenuToMovie();
     }
 
