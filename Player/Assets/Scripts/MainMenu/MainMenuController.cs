@@ -42,7 +42,7 @@ public class MainMenuController : MonoBehaviour
         fileReader.SetVariables(path);
 
         bool isPcd = true;
-        foreach (string line in System.IO.File.ReadLines(path + @"/frame-settings.vrfilm"))
+        foreach (string line in System.IO.File.ReadLines(path + @"/settings.vrfilm"))
         {
             if (line == "ply") isPcd = false;
             break;

@@ -13,7 +13,7 @@ public class FileReader : MonoBehaviour
     public void SetVariables(string path)
     {
         folderPath = path;
-        iniFilePath = path + @"/frame-settings.vrfilm";
+        iniFilePath = path + @"/settings.vrfilm";
 
         int counter = 0;
         bool pcdLine = true;
